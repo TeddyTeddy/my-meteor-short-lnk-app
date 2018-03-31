@@ -1,0 +1,14 @@
+// how to create a new project with a certain meteor version
+meteor create short-lnk --release 1.6.1
+// the above comment creates .meteor/local/release a meteor version set
+// meteor run is enough, no need to do meteor run --release x.x.x.x anymore
+// unless you want to test your app with x.x.x.x meteor version.
+
+// if you want to upgrade/downgrade the meteor version
+meteor update --release 1.6.0.1
+
+// install react etc
+meteor npm install react@15.4.1 react-dom@15.4.1 react-router@3.0.0 --save
+
+// go through package.json and install the missing packages
+meteor npm install
