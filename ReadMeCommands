@@ -12,3 +12,17 @@ meteor npm install react@15.4.1 react-dom@15.4.1 react-router@3.0.0 --save
 
 // go through package.json and install the missing packages
 meteor npm install
+
+// install pwd based accounts management system
+meteor add accounts-password
+
+// how to create createUser
+https://docs.meteor.com/api/passwords.html#Accounts-createUser
+
+// how to check in console if user has signed in or not
+require('meteor/meteor').Meteor.userId()
+require('meteor/meteor').Meteor.user()
+
+// how to logout in console
+require('meteor/accounts-base').Accounts
+require('meteor/accounts-base').Accounts.logout()
