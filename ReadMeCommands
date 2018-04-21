@@ -26,3 +26,7 @@ require('meteor/meteor').Meteor.user()
 // how to logout in console
 require('meteor/accounts-base').Accounts
 require('meteor/accounts-base').Accounts.logout()
+
+// how to check user in mongo db
+meteor mongo
+db.users.find()

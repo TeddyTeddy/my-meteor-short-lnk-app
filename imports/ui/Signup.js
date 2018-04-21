@@ -26,8 +26,6 @@ export default class Signup extends React.Component {
     return (
       <div>
         <h1>Signup to Short Lnk</h1>
-        <p>Sign up form here</p>
-
         {this.state.text ? <p>{this.state.text}</p> : undefined}
         <form>
             <input type='email' ref='email' name='email' placeholder='Email'></input>
