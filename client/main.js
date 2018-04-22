@@ -14,13 +14,19 @@ const onEnterPublicPage = () => {
     if(!!Meteor.userId()) {
       browserHistory.push('/links');
     }
-}
+};
+
+const onEnterPrivatePage = () => {
+    if(!Meteor.userId()) {
+      browserHistory.push('/');
+    }
+};
 
 const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
     <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
-    <Route path="/links" component={Link}/>
+    <Route path="/links" component={Link} onEnter={onEnterPrivatePage}/>
     <Route path="*" component={NotFound}/>
   </Router>
 );
