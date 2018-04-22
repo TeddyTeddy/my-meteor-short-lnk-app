@@ -6,7 +6,7 @@ export default class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      error: ''
     };
   }
 
@@ -18,7 +18,7 @@ export default class Signup extends React.Component {
         console.log('Signup callback:', err);
       });
       // this.setState({
-      //  text: 'Something went wrong'
+      //  error: 'Something went wrong'
       // });
   }
 
@@ -26,7 +26,7 @@ export default class Signup extends React.Component {
     return (
       <div>
         <h1>Signup to Short Lnk</h1>
-        {this.state.text ? <p>{this.state.text}</p> : undefined}
+        {this.state.error ? <p>{this.state.error}</p> : undefined}
         <form>
             <input type='email' ref='email' name='email' placeholder='Email'></input>
             <input type='password' ref='password' name='password' placeholder='Password'></input>
