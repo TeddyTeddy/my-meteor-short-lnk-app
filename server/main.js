@@ -18,7 +18,7 @@ Meteor.startup(() => {
         type: String,
         regEx: SimpleSchema.RegEx.Email
       }
-    }).validate(email);
+    }).validate({email});
 
     return true;
   });
