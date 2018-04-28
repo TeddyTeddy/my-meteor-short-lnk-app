@@ -13,12 +13,18 @@ Meteor.startup(() => {
     // I20180428-17:31:27.113(3)?       { bcrypt: '$2a$10$zjPnHTHfp./VIzlaKkz7Bulk2pJLmxMXTX31UCukNCqzRPVLLUc4e' } },
     // I20180428-17:31:27.114(3)?   emails: [ { address: 'hakan@example.com', verified: false } ] }
     const email = user.emails[0].address;
-    new SimpleSchema({
-      email: {
-        type: String,
-        regEx: SimpleSchema.RegEx.Email
-      }
-    }).validate({email});
+    try {
+      new SimpleSchema({
+        email: {
+          type: String,
+          regEx: SimpleSchema.RegEx.Email
+        }
+      }).validate({email});
+    } catch(e) {
+      console.log('Thrown exception:', e);
+      throw new Meteor.Error(400, e.details[0].message);
+    }
+
 
     return true;
   });
