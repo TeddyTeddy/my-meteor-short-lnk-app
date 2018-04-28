@@ -27,6 +27,9 @@ require('meteor/meteor').Meteor.user()
 require('meteor/accounts-base').Accounts
 require('meteor/accounts-base').Accounts.logout()
 
-// how to check user in mongo db
+// how to check users in mongo db
 meteor mongo
 db.users.find()
+
+// in js console in browser
+localStorage

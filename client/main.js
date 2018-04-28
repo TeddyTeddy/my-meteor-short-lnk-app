@@ -10,12 +10,15 @@ import {Tracker} from 'meteor/tracker';
 
 const unauthenticatedPages = ['/', '/signup'];
 const authenticatedPages = ['/links'];
+
+// to prevent back button click to enter a public route
 const onEnterPublicPage = () => {
     if(!!Meteor.userId()) {
       browserHistory.replace('/links');
     }
 };
 
+// to prevent back button click to enter a private route
 const onEnterPrivatePage = () => {
     if(!Meteor.userId()) {
       browserHistory.replace('/');
@@ -31,6 +34,7 @@ const routes = (
   </Router>
 );
 
+// Tracker runs with full page refresh
 Tracker.autorun(()=> {
   const isAuthenticated = !!Meteor.userId();
   const pathname =  browserHistory.getCurrentLocation().pathname;
