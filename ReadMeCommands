@@ -33,3 +33,9 @@ db.users.find()
 
 // in js console in browser
 localStorage
+
+// install simpl-schema
+meteor npm install simpl-schema --save
+
+// documentation
+https://github.com/aldeed/simple-schema-js
